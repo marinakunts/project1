@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 
 // let number = 5;
 // const leftBorderWidth = 1; //camelCase
@@ -1144,16 +1144,16 @@
 // const deleteElement = (event) => {
 //   console.log(event.currentTarget);
 //   console.log(event.type);
-//   // i++;
-//   // if (i == 1) {
-//   //   btn.removeEventListener("click", deleteElement);
-//   // }
+//   i++;
+//   if (i == 1) {
+//     btn.removeEventListener("click", deleteElement);
+//   }
 // };
 // btn.addEventListener("click", deleteElement);
 // overlay.addEventListener("click", deleteElement);
 
 // btns.forEach((btn) => {
-//   btn, addEventListener("click", deleteElement, { once: true });
+//   btn.addEventListener("click", deleteElement, { once: true });
 // });
 
 // const link = document.querySelector("a");
@@ -1165,4 +1165,395 @@
 // });
 
 //45
-console.log(document.body);
+// console.log(document.body);
+
+//46
+// function pow(x, n) {
+//   let result = 1;
+
+//   for (let i = 0; i < n; i++) {
+//     result *= x;
+//     // result = x * result;
+//   }
+
+//   return result;
+// }
+
+// function pow(x, n) {
+//   if (n === 1) {
+//     return x;
+//   } else {
+//     return x * pow(x, n - 1);
+//   }
+// }
+
+// pow(2, 1); //2
+// pow(2, 2); //4
+// pow(2, 3); //8
+// pow(2, 4); //16
+
+// let students = {
+//   js: [
+//     {
+//       name: "John",
+//       progress: 100,
+//     },
+//     {
+//       name: "Ivan",
+//       progress: 60,
+//     },
+//   ],
+
+//   html: {
+//     basic: [
+//       {
+//         name: "Peter",
+//         progress: 20,
+//       },
+//       {
+//         name: "Ann",
+//         progress: 18,
+//       },
+//     ],
+//     pro: [
+//       {
+//         name: "Sam",
+//         progress: 10,
+//       },
+//     ],
+//   },
+// };
+
+// function getTotalProgressByIteration(data) {
+//   let total = 0;
+//   let students = 0;
+
+//   for (let course of Object.values(data)) {
+//     if (Array.isArray(course)) {
+//       students += course.length;
+
+//       for (let i = 0; i < course.length; i++) {
+//         total += course[i].progress;
+//       }
+//     } else {
+//       for (let subCourse of Object.values(course)) {
+//         students += subCourse.length;
+
+//         for (let i = 0; i < subCourse.length; i++) {
+//           total += subCourse[i].progress;
+//         }
+//       }
+//     }
+//   }
+
+//   return total / students;
+// }
+
+// console.log(getTotalProgressByIteration(students));
+
+// function getTotalProgressByRecrusion(data) {
+//   if (Array.isArray(data)) {
+//     let total = 0;
+
+//     for (let i = 0; i < data.length; i++) {
+//       total += data[i].progress;
+//     }
+//     return [total, data.length];
+//   } else {
+//     let total = [0, 0];
+
+//     for (let SubData of Object.values(data)) {
+//       const subDataArr = getTotalProgressByRecrusion(SubData);
+//       total[0] += subDataArr[0];
+//       total[1] += subDataArr[1];
+//     }
+//     return total;
+//   }
+// }
+
+// const result = getTotalProgressByRecrusion(students);
+
+// console.log(result[0] / result[1]);
+
+// function reverseString(str) {
+//   return str.split("").reverse().join("");
+// }
+// console.log(reverseString("hello")); // "olleh"
+// console.log(reverseString("abc")); // "cba"
+
+// function reverseString(str) {
+//   let reversed = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     reversed += str[i];
+//   }
+//   return reversed;
+// }
+// console.log(reverseString("hello"));
+
+//48
+// touchstart
+// touchmove
+// touchend
+// touchenter
+// touchleave
+// touchcancel
+
+// window.addEventListener("DOMContentLoaded", () => {
+//   const box = document.querySelector(".box");
+
+//   box.addEventListener("touchstart", (e) => {
+//     e.preventDefault();
+//     console.log(start);
+//     console.log(e.touches);
+//   });
+//   // box.addEventListener("touchmove", (e) => {
+//   //   e.preventDefault();
+//   //   console.log(move);
+//   // });
+//   // box.addEventListener("touchend", (e) => {
+//   //   e.preventDefault();
+//   //   console.log(end);
+//   // });
+// });
+
+// touches
+// targetTouches
+// changedTouches
+
+//64
+
+// const btn = document.querySelector(".btn");
+// let timerId,
+//   i = 0;
+
+// function myAnimation() {
+//   const elem = document.querySelector(".box");
+//   let pos = 0;
+
+//   const id = setInterval(frameElement, 10);
+
+//   function frameElement() {
+//     if (pos == 300) {
+//       clearInterval(id);
+//     } else {
+//       pos++;
+//       elem.style.top = pos + "px";
+//       elem.style.left = pos + "px";
+//     }
+//   }
+// }
+// btn.addEventListener("click", myAnimation);
+// function logger() {
+//   if (i === 3) {
+//     clearInterval(timerId);
+//   }
+//   console.log("text");
+//   i++;
+// }
+
+// let id = setTimeout(function log() {
+//   console.log("hello");
+//   id = setTimeout(log, 500);
+// }, 500);
+
+//67
+
+// const now = new Date();
+// new Date.parse();
+
+// // console.log(now.getFullYear());
+// // console.log(now.getMonth());
+// // console.log(now.getDate());
+// // console.log(now.getDay());
+// // console.log(now.getHours());
+// // console.log(now.getUTCHours());
+// console.log(now.getTimezoneOffset());
+
+// let start = new Date();
+
+// for (let i = 0; i < 100000; i++) {
+//   let some = i ** 3;
+// }
+
+// let end = new Date();
+// alert(`loop ${end - start}`);
+
+//74
+//FUnkcja eto objekt
+
+function User(name, id) {
+  this.name = name;
+  this.id = id;
+  this.human = true;
+  this.hello = function () {
+    console.log(`Hello ${this.name}`);
+  };
+}
+
+const marina = new User("Marina", 25);
+const alex = new User("Alex", 30);
+
+marina.hello();
+
+console.log(marina);
+
+//75
+
+function showThis(a, b) {
+  console.log(this);
+  function sum() {
+    console.log(this);
+    return a + b;
+  }
+  console.log(sum());
+}
+showThis(4, 5);
+
+const obj = {
+  a: 20,
+  b: 15,
+  sum: function () {
+    console.log(this);
+  },
+};
+obj.sum();
+
+//76
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+//81
+
+const persone = {
+  name: "Alex",
+  phone: "+7444222",
+};
+
+console.log(JSON.stringify(JSON.parse(JSON.stringify(persone))));
+
+//85
+
+console.log("Loading...");
+
+const req = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log("Preparing data...");
+
+    const product = {
+      name: "TV",
+      price: 2000,
+    };
+    resolve(product);
+  }, 2000);
+});
+
+req
+  .then((product) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        product.status = "order";
+        resolve(product);
+      }, 2000);
+    });
+  })
+  .then((data) => {
+    data.modify = true;
+    return data;
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch(() => {
+    console.error("Error");
+  })
+  .finally(() => {
+    console.log("Done");
+  });
+
+const test = (time) => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(), time);
+  });
+};
+
+// test(1000).then(() => console.log("1000 ms"));
+// test(2000).then(() => console.log("2000 ms"));
+
+// Promise.all([test(1000), test(2000)]).then(() => {
+//   console.log('All');
+// });
+
+Promise.race([test(1000), test(2000)]).then(() => {
+  console.log("All");
+});
+
+//87
+
+//Filter
+
+const names = ["ivan", "ann", "voldemar"];
+
+const shortNames = names.filter((name) => {
+  return names.length < 4;
+});
+
+console.log(shortNames);
+
+// map
+
+const answers = ["IvAn", "AnnA"];
+
+const result = answers.map((item) => item.toLocaleLowerCase());
+console.log(result);
+
+// every / some;
+
+const some = [4, "qwerty", "qwq"];
+
+console.log(some.some((item) => typeof item === "number"));
+
+console.log(some.every((item) => typeof item === "number")); //false
+console.log(some.every((item) => typeof item === "string")); //false
+
+// reduce
+
+const arr = [1, 2, 3, 4, 5];
+
+const res = arr.reduce((sum, current) => sum + current, 3);
+console.log(res);
+
+//Задачи:
+
+// 1) У вас есть список фильмов с рейтингом в виде массива объектов. Напишите функцию showGoodFilms, которая будет принимать этот массив, а возвращать будет массив объектов только с теми фильмами, у которых рейтинг больше или равен 8.
+
+// P.S. Это довольно типичная задача в программировании. Вспомните, на самых разных сайтах можно так фильтровать любые товары/фильмы/сериалы...
+
+function showGoodFilms(arr) {
+  const films = [
+    {
+      name: "Titanic",
+      rating: 9,
+    },
+    {
+      name: "Die hard 5",
+      rating: 5,
+    },
+    {
+      name: "Matrix",
+      rating: 8,
+    },
+    {
+      name: "Some bad film",
+      rating: 4,
+    },
+  ];
+  const result = films.filter((film) => film.rating >= 8);
+  console.log(result);
+}
+
+showGoodFilms();
