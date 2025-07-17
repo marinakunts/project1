@@ -302,29 +302,29 @@
 // *****
 // ******
 
-// let result = "";
-// const length = 7;
+let result1 = "";
+const lengthh = 7;
 
-// for (let i = 1; i < length; i++) {
-//   for (let j = 0; j < i; j++) {
-//     result += "*";
-//   }
+for (let i = 1; i < lengthh; i++) {
+  for (let j = 0; j < i; j++) {
+    result1 += "*";
+  }
 
-//   result += "\n";
-// }
+  result1 += "\n";
+}
 
-// console.log(result);
+console.log(result1);
 
-// first: for (let i = 0; i < 3; i++) {
-//   console.log(`First level: ${i}`);
-//   for (let j = 0; j < 3; j++) {
-//     console.log(`Second level: ${j}`);
-//     for (let k = 0; k < 4; k++) {
-//       if (k === 2) break first;
-//       console.log(`Third level: ${k}`);
-//     }
-//   }
-// }
+first: for (let i = 0; i < 3; i++) {
+  console.log(`First level: ${i}`);
+  for (let j = 0; j < 3; j++) {
+    console.log(`Second level: ${j}`);
+    for (let k = 0; k < 4; k++) {
+      if (k === 2) break first;
+      console.log(`Third level: ${k}`);
+    }
+  }
+}
 
 // Exercise 3
 // function firstTask() {
@@ -451,21 +451,19 @@
 //  *********
 // ***********
 
-// const lines = 5;
-// let result = "";
-// const length = 7;
+const lines = 5;
+let resultt = "";
+const length = 7;
 
-// for (let i = 1; i < length; i++) {
+for (let i = 1; i < length; i++) {
+  for (let j = 0; j < i; j++) {
+    result += "*";
+  }
 
-//   for (let j = 0; j < i; j++) {
-//     result += "*";
+  resultt += "\n";
+}
 
-//   }
-
-//   result += "\n";
-// }
-
-// console.log(result);
+console.log(resultt);
 
 // function doubleNumbers() {
 //   const arr = [1, 2, 3, 4, 5];
@@ -566,18 +564,18 @@
 
 // Место для третьей задачи
 
-// function getMathResult(num, count) {
-//   for (let i = 0; i < count; i++) {
-//     if (typeof count === "number") {
-//       return num * count + "---";
-//     } else if (typeof count === "string") {
-//       return num * count;
-//     } else if (typeof count != "number" || arr < 0) {
-//       return num;
-//     }
-//   }
-// }
-// console.log(getMathResult(5, 3));
+function getMathResult(num, count) {
+  for (let i = 0; i < count; i++) {
+    if (typeof count === "number") {
+      return num * count + "---";
+    } else if (typeof count === "string") {
+      return num * count;
+    } else if (typeof count != "number" || arr < 0) {
+      return num;
+    }
+  }
+}
+console.log(getMathResult(5, 3));
 // ?????
 
 //27
@@ -1326,35 +1324,35 @@
 // let timerId,
 //   i = 0;
 
-// function myAnimation() {
-//   const elem = document.querySelector(".box");
-//   let pos = 0;
+function myAnimation() {
+  const elem = document.querySelector(".box");
+  let pos = 0;
 
-//   const id = setInterval(frameElement, 10);
+  const id = setInterval(frameElement, 10);
 
-//   function frameElement() {
-//     if (pos == 300) {
-//       clearInterval(id);
-//     } else {
-//       pos++;
-//       elem.style.top = pos + "px";
-//       elem.style.left = pos + "px";
-//     }
-//   }
-// }
-// btn.addEventListener("click", myAnimation);
-// function logger() {
-//   if (i === 3) {
-//     clearInterval(timerId);
-//   }
-//   console.log("text");
-//   i++;
-// }
+  function frameElement() {
+    if (pos == 300) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + "px";
+      elem.style.left = pos + "px";
+    }
+  }
+}
+btn.addEventListener("click", myAnimation);
+function logger() {
+  if (i === 3) {
+    clearInterval(timerId);
+  }
+  console.log("text");
+  i++;
+}
 
-// let id = setTimeout(function log() {
-//   console.log("hello");
-//   id = setTimeout(log, 500);
-// }, 500);
+let id = setTimeout(function log() {
+  console.log("hello");
+  id = setTimeout(log, 500);
+}, 500);
 
 //67
 
@@ -1409,14 +1407,14 @@ function showThis(a, b) {
 }
 showThis(4, 5);
 
-const obj = {
-  a: 20,
-  b: 15,
-  sum: function () {
-    console.log(this);
-  },
-};
-obj.sum();
+// const obj = {
+//   a: 20,
+//   b: 15,
+//   sum: function () {
+//     console.log(this);
+//   },
+// };
+// obj.sum();
 
 //76
 
@@ -1557,3 +1555,13 @@ function showGoodFilms(arr) {
 }
 
 showGoodFilms();
+
+const obj = {
+  a: 1,
+  b: 2,
+};
+const copy = obj;
+
+obj.a = 5;
+console.log(copy.a);
+console.log(obj);
