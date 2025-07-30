@@ -152,3 +152,90 @@ function abbrevName(name) {
   var nameArray = name.split(" ");
   return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
 }
+
+//Bob is working as a bus driver. However, he has become extremely popular amongst the city's residents. With so many passengers wanting to get aboard his bus, he sometimes has to face the problem of not enough space left on the bus! He wants you to write a simple program telling him if he will be able to fit all the passengers. Task Overview: You have to write a function that accepts three parameters: cap is the amount of people the bus can hold excluding the driver. on is the number of people on the bus excluding the driver. wait is the number of people waiting to get on to the bus excluding the driver. If there is enough space, return 0, and if there isn't, return the number of passengers he can't take.
+
+function enough(cap, on, wait) {
+  let people;
+}
+
+//Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+function getGrade(s1, s2, s3) {}
+
+//Clock shows h hours, m minutes and s seconds after midnight. Your task is to write a function which returns the time since midnight in milliseconds.
+
+function past(h, m, s) {
+  return (h * 3600 + m * 60 + s) * 1000;
+}
+console.log(past(1, 2, 4));
+
+//Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+function fakeBin(x) {
+  let result = "";
+  for (let i = 0; i < x.length; i++) {
+    if (x[i] < "5") {
+      result += "0";
+    } else {
+      result += "1";
+    }
+  }
+  return result;
+}
+console.log(fakeBin("1349338536"));
+
+function fakeBin(x) {
+  return x
+    .split("")
+    .map((n) => (n < 5 ? 0 : 1))
+    .join("");
+}
+
+//You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square. If it is a square, return its area. If it is a rectangle, return its perimeter.
+const areaOrPerimeter = function (l, w) {
+  if (l % 2 === 0 && w % 2 === 0) {
+    return l * w;
+  } else {
+    return 2 * (l + w);
+  }
+};
+console.log(areaOrPerimeter(1, 3));
+
+// const areaOrPerimeter = function (l, w) {
+//   return l == w ? l * w : 2 * (l + w);
+// };
+
+//Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms. If you want to know more: http://en.wikipedia.org/wiki/DNA In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell). More similar exercise are found here: http://rosalind.info/problems/list-view/ (source)
+
+function dnaStrand(dna) {
+  let result = "";
+  for (let i = 0; i < dna.length; i++) {
+    if (dna[i] === "T") {
+      result += "A";
+    } else if (dna[i] === "A") {
+      result += "T";
+    } else if (dna[i] === "G") {
+      result += "C";
+    } else if (dna[i] === "C") {
+      result += "G";
+    }
+  }
+  return result;
+}
+console.log(dnaStrand("ATTC"));
+
+var pairs = { A: "T", T: "A", C: "G", G: "C" };
+
+function DNAStrand(dna) {
+  return dna
+    .split("")
+    .map(function (v) {
+      return pairs[v];
+    })
+    .join("");
+}
+
+//Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+function digitize(n) {
+  //code here
+}
